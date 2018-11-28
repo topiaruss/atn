@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'estate.apps.EstateConfig',
     'partners.apps.PartnersConfig',
     'polls.apps.PollsConfig',
