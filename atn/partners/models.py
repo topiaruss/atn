@@ -7,7 +7,7 @@ class Client(models.Model):
     creation_date = models.DateTimeField('date created')
 
     def __str__(self):
-        return ', '.join(self.name, self.address)
+        return ', '.join([self.name, self.address])
 
 
 class Customer(models.Model):
@@ -18,5 +18,5 @@ class Customer(models.Model):
 
 
     def __str__(self):
-        return ', '.join(self.name, self.address) + ' client of ' + self.client
+        return ', '.join([self.name, self.address]) + ' client of ' + self.client.name
 

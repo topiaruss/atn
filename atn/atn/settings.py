@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'estate.apps.EstateConfig',
     'partners.apps.PartnersConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
