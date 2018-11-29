@@ -7,6 +7,10 @@ if __name__ == '__main__':
     LIB_DIR = os.path.join(BASE_DIR, 'atn', 'libs')
     sys.path.append(LIB_DIR)
     #import pdb; pdb.set_trace()
+    print('BASE: %s', BASE_DIR)
+    print('LIBS: %s', LIB_DIR)
+    print('PPATH: %s', sys.path)
+    
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'atn.settings')
     try:
         from django.core.management import execute_from_command_line
