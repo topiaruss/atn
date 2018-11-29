@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 djangorestframework = "*"
 django-model-utils = "*"
+hypothesis = "*"
 
 [requires]
 python_version = "3.7"
