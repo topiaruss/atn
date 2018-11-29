@@ -13,9 +13,11 @@ class ClientTestCase(TestCase):
         second = Client.objects.get(name="secondClient")
         assert first
         assert second
-        
+
     def test_exception_when_none(self):
         with self.assertRaises(Client.DoesNotExist) as context:
           third = Client.objects.get(name="xxx")
+
+          
 
 
