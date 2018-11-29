@@ -1,20 +1,19 @@
 from django.db import models
+from model_utils.models import TimeStampedModel
 
 
-class Client(models.Model):
+class Client(TimeStampedModel):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=150)
-    creation_date = models.DateTimeField('date created')
 
     def __str__(self):
         return ', '.join([self.name, self.address])
 
 
-class Customer(models.Model):
+class Customer(TimeStampedModel):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=150)
-    creation_date = models.DateTimeField('date created')
 
 
     def __str__(self):

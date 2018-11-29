@@ -1,4 +1,5 @@
 from django.conf.urls import url, include
+from django.urls import path
 from rest_framework import routers
 from . import views
 
@@ -13,4 +14,8 @@ router.register(r'sites', views.SiteViewSet)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+]
+
+urlpatterns += [
+    path('sites_by_zone/<int:zone_id>', views.SiteByZoneList.as_view(), name='sites-by-zone'),
 ]

@@ -14,17 +14,17 @@ class ClientSerializer(serializers.HyperlinkedModelSerializer):
 class CustomerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Customer
-        fields = ('url', 'name', 'address',)
+        fields = ('url', 'client', 'name', 'address',)
 
 
 class ZoneSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Zone
-        fields = ('url', 'name',)
+        fields = ('url', 'customer', 'name',)
 
 
 class SiteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Site
-        fields = ('url', 'name',)
+        fields = ('url', 'zone', 'name',)
 
