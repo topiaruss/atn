@@ -5,6 +5,7 @@ from rest_framework.test import APIClient
 
 # define the range of name strings that hypothesis will present. Ensure that none start or end with <space>
 # and that none is zero length.  This is used in @given()
+# from: https://hypothesis.works/articles/generating-the-right-data/
 names = text(characters(max_codepoint=1000, blacklist_categories=('Cc', 'Cs')), min_size=1).map(
     lambda x: x.strip()).filter(lambda s: len(s) > 0)
 
