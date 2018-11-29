@@ -8,11 +8,13 @@ from rest_framework.test import APIClient
 # from: https://hypothesis.works/articles/generating-the-right-data/
 names = text(characters(max_codepoint=1000, blacklist_categories=('Cc', 'Cs')), min_size=1).map(
     lambda x: x.strip()).filter(lambda s: len(s) > 0)
+addresses = text(characters(max_codepoint=1000, blacklist_categories=('Cc', 'Cs')), min_size=1).map(
+    lambda x: x.strip()).filter(lambda s: len(s) > 0)
 
 
 class BasicApiTests(TestCase):
 
-    @given(names, names)
+    @given(names, addresses)
     def test_create_client_and_retrieve(self, client_name, client_address):
         client = APIClient()
 
